@@ -1,2 +1,2 @@
-# node_image_uploader
-A simple node.js app which demonstrates how to upload images to a node.js backend.
+# Node Image Uploader
+How to use multer with node.js and express to build an endpoint for uploading images to a server.
