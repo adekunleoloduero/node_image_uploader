@@ -1,0 +1,32 @@
+{
+  "name": "node_image_uploader",
+  "version": "1.0.0",
+  "description": "How to use multer with node.js and express to build an endpoint for uploading images to a server.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adekunleoloduero/node_image_uploader.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "multer",
+    "ejs",
+    "image",
+    "upload"
+  ],
+  "author": "Sheriff Adekunle Tajudeen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adekunleoloduero/node_image_uploader/issues"
+  },
+  "homepage": "https://github.com/adekunleoloduero/node_image_uploader#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}
