@@ -60,10 +60,13 @@ app.get('/', (req, res) => {
 app.post('/upload', (req, res) => {
     upload(req, res, (err) => {
         if (err) {
-            console.log(err)
             return res.render('index', { msg: err, msgType: 'error' });
         } else {
-            return res.render('index', {msg: 'Image uploaded successfully.', msgType: 'success' });
+            if (req.file == undefined) {
+                return res.render('index', { msg: 'You have not selected any file.', msgType: 'error' })
+            } else {
+                return res.render('index', {msg: 'Image uploaded successfully.', msgType: 'success', file: `/public/image_uploads/${req.file.filename}` });
+            }
         }
     })
 })

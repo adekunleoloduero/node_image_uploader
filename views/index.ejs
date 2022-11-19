@@ -18,7 +18,9 @@
     
     <main>
         <h2>Upload Image</h2>
-        <div class="image-container"></div>
+        <div class="image-container">
+            <img src="<%= typeof file != 'undefined' ? file : '' %>" alt="" class="image-upload">
+        </div><br>
         <form action="/upload" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <input type="file" name="imageUpload" id="image-upload">
