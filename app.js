@@ -27,7 +27,10 @@ const storage = multer.diskStorage({
 
 //upload variable
 const upload = multer({
-    storage: storage
+    storage: storage,
+    limits: {
+        fileSize: 5000000
+    }
 }).single('imageUpload');
 
 
@@ -38,12 +41,15 @@ app.get('/', (req, res) => {
 
 
 //Image upload route
-app.post('/upload', upload, (req, res) => {
-    if (req.err) {
-        return res.render('index', { msg: req.err, msgType: 'error' });
-    } else {
-        return res.render('index', {msg: 'Image uploaded successfully.', msgType: 'success' });
-    }
+app.post('/upload', (req, res) => {
+    upload(req, res, (err) => {
+        if (err) {
+            console.log(err)
+            return res.render('index', { msg: err, msgType: 'error' });
+        } else {
+            return res.render('index', {msg: 'Image uploaded successfully.', msgType: 'success' });
+        }
+    })
 })
 
 

@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.message {
+    width: 100%;
+    text-align: center;
+}
+
+main {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.success {
+    background-color: rgb(59, 168, 59);
+    color: white;
+    padding: 0.2em;
+}
+
+.error {
+    background-color: rgb(184, 122, 122);
+    color: white;
+    padding: 0.2em;
+}
