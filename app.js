@@ -30,6 +30,22 @@ const upload = multer({
     storage: storage,
     limits: {
         fileSize: 5000000
+    },
+    fileFilter: function(req, file, cb) {
+        //Allowed file types
+        const filetypes = /jpeg|jpg|png|gif/;
+
+        //Check file extension
+        const ext = filetypes.test(path.extname(file.originalname));
+
+        //Check mime type
+        const mimetype = filetypes.test(file.mimetype);
+
+        if (ext && mimetype) {
+            cb(null, true);
+        } else {
+            cb('File must be an image.');
+        }
     }
 }).single('imageUpload');
 
